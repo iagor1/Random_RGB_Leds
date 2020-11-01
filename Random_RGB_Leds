@@ -1,0 +1,105 @@
+int led_R = 7; // pino LED Vermelho (R)
+int led_G = 6; // pino LED Verde (G)
+int led_B = 5; // pino LED azul (B)
+int pinoTilt = 4;
+
+   void setup() {
+pinMode(led_R, OUTPUT); // Definimos os pinos como saida
+  pinMode(led_G, OUTPUT);
+  pinMode(led_B, OUTPUT);
+pinMode(pinoTilt, INPUT);
+
+}
+
+void loop() {
+  if(digitalRead(pinoTilt) == HIGH)
+{acendeLed();}
+}
+void acendeLed()
+{
+  for( int i=0; i<7; i++)
+ {
+  switch ( random( 0, 7))
+   {
+    case 0 :
+     acende0();
+     break;
+    case 1 : 
+     acende1();
+        break;
+      case 2 :
+        acende2();
+        break;
+      case 3 :
+        acende3();
+        break;
+      case 4 :
+        acende4();
+        break;
+      case 5 :
+        acende5();
+        break;
+      case 6 :
+        acende6();
+        break;
+      case 7 :
+        acende7();
+        break;
+
+    delay(1000*i);
+  
+  }
+ }
+}
+
+
+void acende0()// VERMELHO
+{digitalWrite(led_R, LOW);
+  digitalWrite(led_G, LOW);
+  digitalWrite(led_B, HIGH);
+}
+ 
+void acende1()// VERDE
+{
+  digitalWrite(led_R, HIGH);
+  digitalWrite(led_G, LOW);
+  digitalWrite(led_B, HIGH);
+}
+ 
+void acende2()// AZUL
+{
+  digitalWrite(led_R, HIGH);
+  digitalWrite(led_G, HIGH);
+  digitalWrite(led_B, LOW);
+}
+ 
+void acende3()//branco
+{
+  digitalWrite(led_R, LOW);
+  digitalWrite(led_G, LOW);
+  digitalWrite(led_B, LOW);
+}
+void acende4()// AZUL
+{
+  digitalWrite(led_R, HIGH);
+  digitalWrite(led_G, HIGH);
+  digitalWrite(led_B, LOW);
+}
+void acende5()// ciano
+{
+  digitalWrite(led_R, HIGH);
+  digitalWrite(led_G, LOW);
+  digitalWrite(led_B, LOW);
+}
+void acende6()//magenta
+{
+  digitalWrite(led_R, LOW);
+  digitalWrite(led_G, HIGH);
+  digitalWrite(led_B, LOW);
+}
+void acende7()// amarelo
+{
+  digitalWrite(led_R, LOW);
+  digitalWrite(led_G, LOW);
+  digitalWrite(led_B, HIGH);
+}
